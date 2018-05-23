@@ -30,3 +30,40 @@ int* bubble_sort(int* array, int nElements){
 }
 
 
+int* wrap_create_arrayInt(int nElements){
+
+    int* pArrayInt = (int*)malloc(sizeof(int)*nElements);
+
+    return pArrayInt;
+
+}
+
+
+void wrap_set_arrayInt(int* pArrayInt, int nElements, int element, int index){
+
+    if(index <= nElements){
+
+        pArrayInt[index] = element;
+
+    } else{
+
+        return;
+    }
+
+}
+
+
+
+int wrap_get_arrayInt(int* pArrayInt, int nElements, int index){
+
+    if(index <= nElements){
+
+        return pArrayInt[index];
+
+    } else{
+
+        return 0;
+
+    }
+
+}

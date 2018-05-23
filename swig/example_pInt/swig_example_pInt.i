@@ -2,6 +2,7 @@
 
 %module swig_example_pInt
 
+/*
 %typemap(in) int*{
 
     if(PyList_Check($input)){
@@ -26,6 +27,8 @@
 
 }
 
+
+
 // $1 is a C local variable corresponding to the actual type specified in %typemap directive
     // clean up int* array we malloc'd before the function call
 %typemap(freearg) int* {
@@ -33,9 +36,20 @@
     free((int*) $1);
 }
 
+*/
+
 %{
 #include "swig_example_pInt.h"
 extern int* bubble_sort(int* array, int nElements);
+
+extern int* wrap_create_arrayInt(int nElements);
+extern void wrap_set_arrayInt(int* pArrayInt, int nElements, int element, int index);
+extern int wrap_get_arrayInt(int* pArrayInt, int nElements, int index);
+
 %}
 
 extern int* bubble_sort(int* array, int nElements);
+
+extern int* wrap_create_arrayInt(int nElements);
+extern void wrap_set_arrayInt(int* pArrayInt, int nElements, int element, int index);
+extern int wrap_get_arrayInt(int* pArrayInt, int nElements, int index);
