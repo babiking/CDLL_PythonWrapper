@@ -18,4 +18,3 @@ set_source_files_properties(swig_example_Structure.i PROPERTIES SWIG_FLAGS "-inc
 swig_add_module(swig_example_Structure python swig_example_Structure.i swig_example_Structure.cpp)
 swig_link_libraries(swig_example_Structure ${PYTHON_LIBRARIES})
 
-add_executable(swig_example_Structure main.cpp swig_example_Structure.cpp swig_example_Structure.h)
